@@ -1,0 +1,34 @@
+.todo--container form input { 
+    height: 2rem;
+    width: 300px;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 5px 12px;;
+}
+.submitBtnRed { 
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background-color: rgb(247, 74, 74);
+    color: white;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+.todos { 
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.todoboxEach { 
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding-left:12px;
+}
+.todoboxEach button {
+    border-radius: 10px;
+}
