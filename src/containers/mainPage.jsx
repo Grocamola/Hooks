@@ -8,17 +8,18 @@ const MainPage = () => {
 
     const navigate = useNavigate();
 
-    const hooksArray = ['useState','useEffect', 'useRef', 'useParams', 'useReducer', 'use4Context','CustomHooks', 'useSomething','useSomething','useSomething','useSomething']
+    const hooksArray = ['useState','useEffect', 'useRef']
 
-    const openHookPageHandler = () => { 
-        navigate('/hooks/useState', {replace: true});
+    const openHookPageHandler = (e) => { 
+        navigate(`/hooks/${e}`, {replace: true});
     }
 
     return ( 
         <div className="mainPage">
             <Navbar />
+            <h1 style={{fontFamily: "RockSalt-Regular"}}>Hooks and more, much more...</h1>
             <div className="mainPage--Hooks">
-                {hooksArray.map(el => <div className="workshopBox" onClick={openHookPageHandler}><h4>{el}</h4></div>)}
+                {hooksArray.map(el => <div className="workshopBox" onClick={() => openHookPageHandler(el)}><h4>{el}</h4></div>)}
 
                 {/* <div className="workshopBox">
                     <h4>useState</h4>
@@ -54,6 +55,7 @@ const MainPage = () => {
                     <h4>useSomething</h4>
                 </div> */}
             </div>
+            <hr />
         </div>
      );
 }

@@ -1,11 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+
 import './mainStyles.css'
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
     return ( 
         <div className="navbar">
-            <div className="logo"><h3>Grocamola</h3></div>
-            <div className="nav--icons"><p>Home</p></div>
+            <div className="navbar--container">
+                <div className="logo"><h3>Grocamola</h3></div>
+                <div className="nav--icons" onClick={() => navigate(`/hellow!`, {replace: true})}><p>Hooks</p></div>
+            </div>
         </div>
      );
 }
