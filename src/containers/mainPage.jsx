@@ -21,6 +21,7 @@ const MainPage = () => {
             <div className="mainPage--Hooks">
                 {hooksArray.map(el => <div className="workshopBox" onClick={() => openHookPageHandler(el)}><h4>{el}</h4></div>)}
 
+                {/* THIS IS WHAT YOU HAVE TO WRITE IF YOU DONT USE REACT */}
                 {/* <div className="workshopBox">
                     <h4>useState</h4>
                 </div>
