@@ -16,10 +16,10 @@
 }
 
 .todos { 
-    width: 300px;
+    width: 400px;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 20px auto 30px;
 }
 .todoboxEach { 
     display: flex;
@@ -29,6 +29,27 @@
     border-radius: 10px;
     padding-left:12px;
 }
-.todoboxEach button {
+.todoboxEach--buttons--gray, .todoboxEach--buttons--green  {
     border-radius: 10px;
+    width: 5rem;
+    height: 3.05rem;
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+.todoboxEach--buttons--gray { 
+    background-color: #bbb;
+}
+
+.todoboxEach--buttons--green { 
+    background-color: #2ba20b;
+}
+.todoboxEach--buttons--delete { 
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color:rgb(247, 74, 74);
+    color: white;
+    border: none;
+    transform: translateX(12px);
 }
