@@ -32,7 +32,8 @@
 .todoboxEach--buttons--gray, .todoboxEach--buttons--green  {
     border-radius: 10px;
     width: 5rem;
-    height: 3.05rem;
+    height: 3rem;
+    margin: 0.1rem;
     border: none;
     color: white;
     font-weight: 600;
