@@ -52,29 +52,33 @@ const UseStateHook = () => {
             <div className="UseStateHook">
                 <h2 style={{marginTop: 150}}>The very first project, TODO!</h2>
                 <div className="todo--container">
+
                     <form onSubmit={todoSubmitHandler}>
                         <input className="todoInput" value={todoItem.desc} type="text" onChange={inputChangeHandler} />
                         <button className="submitBtnRed" type="submit">Add</button>
                     </form>
+
                     <div className="todos">
                         {todo.map((el, index) => <div className="todoboxEach" key={index}>
                             <p>{el.desc}</p>
+
                             <div className="todoboxEach--buttons">
-                            <button 
-                                className="todoboxEach--buttons--gray"
-                                disabled={el.status} 
-                                style={{display: el.status === true ? "none" : 'unset'}} 
-                                onClick={() => todoCompleteHandler(index)}>Ongoing</button>
-                            <button 
-                                className="todoboxEach--buttons--green"
-                                disabled={!el.status} 
-                                style={{display: el.status === false ? "none" : 'unset'}} 
-                                onClick={() => todoCompleteHandler(index)}>Done</button>
+                                <button 
+                                    className="todoboxEach--buttons--gray"
+                                    disabled={el.status} 
+                                    style={{display: el.status === true ? "none" : 'unset'}} 
+                                    onClick={() => todoCompleteHandler(index)}>Ongoing</button>
+                                <button 
+                                    className="todoboxEach--buttons--green"
+                                    disabled={!el.status} 
+                                    style={{display: el.status === false ? "none" : 'unset'}} 
+                                    onClick={() => todoCompleteHandler(index)}>Done</button>
                                 <button
                                     className="todoboxEach--buttons--delete"
                                     style={{display: el.status === false ? "none" : 'unset'}} 
                                     onClick={() => deleteTodoHandler(el)}>X</button>
                             </div>
+
                         </div>)}
                     </div>
                 </div>
