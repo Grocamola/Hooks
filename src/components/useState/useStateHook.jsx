@@ -1,3 +1,66 @@
+// import React, { useState } from 'react';
+// import Navbar from '../../containers/navbar';
+
+// import './useStateHook.css'
+
+// const UseStateHook = () => {
+
+//     const [todoItems, setTodoItems] = useState([])
+//     const [todoItem, setTodoItem] = useState({desc: '', status: ''})
+
+
+//     const formSubmitHandler = (e) => {
+//         e.preventDefault()
+
+//         setTodoItems(prev => [...prev, todoItem])
+//         console.log(todoItems)
+//     }
+
+//     const inputChangeHandler = (e) => {
+//         let tempTodoItem = {desc: e.target.value, status: 'inProgress'}
+//         setTodoItem(tempTodoItem)
+//     }
+
+
+//     return (
+//         <div>
+//             <Navbar />
+//             <div className="useState--container">
+//                 <form onSubmit={formSubmitHandler}>
+//                     <input type="text" onChange={inputChangeHandler} />
+//                     <button type='submit'>ADD</button>
+//                 </form>
+//                 {todoItems.map(item => <p>{item.desc}</p>)}
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default UseStateHook;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from 'react';
 import Navbar from '../../containers/navbar';
 
