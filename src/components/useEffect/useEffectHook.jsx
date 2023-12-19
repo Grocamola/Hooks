@@ -27,6 +27,10 @@ const UseEffectHook = () => {
     const [responseType, setResponseType] = useState('posts')
     const [items, setItems] = useState([])
 
+    useEffect(() => {
+        console.log('Welcome to our website!')
+    },[])
+
     useEffect(() => { 
         fetch(`http://jsonplaceholder.typicode.com/${responseType}`)
         .then(response => response.json())
@@ -56,3 +60,8 @@ const UseEffectHook = () => {
 }
  
 export default UseEffectHook;
+
+
+
+
+

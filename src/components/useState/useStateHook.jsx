@@ -41,20 +41,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//  const array = [1,2,3,4]
+//  const array2 = [...array,5]
+//  console.log(array2)
 
 
 
@@ -97,11 +86,17 @@ const UseStateHook = () => {
     }
 
     const todoCompleteHandler = (index) => { 
-        setTodo((prevTodo) => (
-            prevTodo.map((el, i) => (
-                i === index ? { ...el, status: el.status === true ? false : true } : el
-            ))
-        ));
+        // setTodo((prevTodo) => (
+        //     prevTodo.map((el, i) => (
+        //         i === index ? { ...el, status: el.status === true ? false : true } : el
+        //     ))
+        // ));
+
+        let todoTemp = todo;
+        todoTemp[index].status === true ? todoTemp[index].status = false : todoTemp[index].status = true ;
+        console.log(todoTemp)
+
+        setTodo(() => [...todoTemp])
     };
 
     const deleteTodoHandler = (item) => {
