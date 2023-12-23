@@ -28,7 +28,7 @@ const UseEffectHook = () => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        console.log('Welcome to our website!')
+        console.log('Welcome to our useEffect hook!')
     },[])
 
     useEffect(() => { 
@@ -48,9 +48,9 @@ const UseEffectHook = () => {
                 <hr />
                 <div className="useEffect--items">
                     <ul>
-                        {responseType === 'posts' && items.length > 0 ? items.splice(1,10).map(item => <li key={item.index}>{item.title}</li>) : 
-                        responseType === 'albums' && items.length > 0 ? items.splice(1,10).map(item => <li key={item.index}>{item.title}</li>) : 
-                        responseType === 'comments' && items.length > 0 ? items.splice(1,10).map(item => <li key={item.index}>{item.body}</li>) : 
+                        {responseType === 'posts' && items.length > 0 ? items.splice(1,10).map((item, index) => <li key={index}>{item.title}</li>) : 
+                        responseType === 'albums' && items.length > 0 ? items.splice(1,10).map((item, index) => <li key={index}>{item.title}</li>) : 
+                        responseType === 'comments' && items.length > 0 ? items.splice(1,10).map((item, index) => <li key={index}>{item.body}</li>) : 
                         null}
                     </ul>
                 </div>

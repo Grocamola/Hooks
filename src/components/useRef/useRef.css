@@ -1,0 +1,37 @@
+.useRef--container { 
+    margin: 15rem auto 5rem;
+}
+
+.useRef--container form { 
+    background-color: #bdbdbd;
+    width: 300px;
+    height: 210px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.useRef--container form input { 
+    display: block;
+    width: 85%;
+    height: 2rem;
+    margin: 10px auto;
+    padding: 2px 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.useRef--container form button { 
+    margin: 15px;
+    border: none;
+    width: 120px;
+    height: 2rem;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    background-color: rgb(255, 67, 67);
+}
+.useRef--container form button:active { 
+    transform: scale(0.95);
+    outline: rgb(255, 67, 67);
+}
