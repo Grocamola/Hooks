@@ -20,7 +20,6 @@ const UseRef = () => {
 
           console.log(`New User: ${name} - ${email}`)
 
-      
           // Reset input fields
           nameInputRef.current.value = '';
           emailInputRef.current.value = '';

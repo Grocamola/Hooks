@@ -8,7 +8,7 @@ const MainPage = () => {
 
     const navigate = useNavigate();
 
-    const hooksArray = ['useState','useEffect', 'useRef']
+    const hooksArray = ['useState','useEffect', 'useRef', 'useContext', 'useReducer']
 
     const openHookPageHandler = (e) => { 
         navigate(`/hooks/${e}`, {replace: true});
