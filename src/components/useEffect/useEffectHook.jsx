@@ -6,53 +6,45 @@ import './useEffectStyles.css';
 
 const UseEffectHook = () => {
 
-    // const [btn, setBtn] = useState(0)
-
-    // useEffect(() => {
-    //     // setBtn(btn + 1) <-- if you uncomment this, it will start an infinite loop ;)
-    //     btn > 1 && console.log(`You hit me ${btn} times?!`)
-    // },[btn])
-
-    // return ( 
-    //     <>
-    //         <Navbar />
-    //         <div className="useEffect--container">
-    //             <button onClick={() => setBtn(btn => btn + 1)}>HIT ME! {btn > 0 && btn}</button>
-    //         </div>
-    //     </>
-    //  );
-
-    // ------------------------------------------------------------ //
-
     const [responseType, setResponseType] = useState('posts')
     const [items, setItems] = useState([])
 
-    useEffect(() => {
-        console.log('Welcome to our useEffect hook!')
-    },[])
+    // useEffect(() => {
+    //     console.log('Welcome to our useEffect hook!')
+    // },[])
 
     useEffect(() => { 
         fetch(`http://jsonplaceholder.typicode.com/${responseType}`)
         .then(response => response.json())
         .then(json => setItems(json))
-        // .then(json => console.log(json))
+        // .then(data => console.log(data))
     },[responseType])
 
     return (
         <>
             <Navbar />
-            <div className="useEffect--container">
-                <button onClick={() => setResponseType('posts')}>Posts</button>
-                <button onClick={() => setResponseType('albums')}>Users</button>
-                <button onClick={() => setResponseType('comments')}>Comments</button>
-                <hr />
-                <div className="useEffect--items">
+            <div className="useEffect--full">
+                <div className="useEffect--final">
+                    <div className="useEffect--container">
+                        <button onClick={() => setResponseType('posts')}>Posts</button>
+                        <button onClick={() => setResponseType('albums')}>Users</button>
+                        <button onClick={() => setResponseType('comments')}>Comments</button>
+                        <hr />
+                        <div className="useEffect--items">
+                            <ul>
+                                {items.splice(1,10).map((item, index) => <li key={index}>{responseType === 'comments' ? item.body : item.title}</li>)} 
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div className="useEffect--exercise" style={{textAlign: 'left', padding: '0 20px 40px', border: '1px solid #ccc', borderRadius: 20}}>
+                    <p>Create your own list here :)</p>
+                    <p>All you have to do is...</p>
                     <ul>
-                        {responseType === 'posts' && items.length > 0 ? items.splice(1,10).map((item, index) => <li key={index}>{item.title}</li>) : 
-                        responseType === 'albums' && items.length > 0 ? items.splice(1,10).map((item, index) => <li key={index}>{item.title}</li>) : 
-                        responseType === 'comments' && items.length > 0 ? items.splice(1,10).map((item, index) => <li key={index}>{item.body}</li>) : 
-                        null}
-                        {/* {items.splice(1,10).map((item, index) => <li key={index}>{item.title}</li>)} */}
+                        <li>Check my code, create the UI</li>
+                        <li>Then try to fetch data from the free API website :)</li>
+                        <li>Make sure you can add update list by clicking other buttons</li>
+                        <li>Good luck!</li>
                     </ul>
                 </div>
             </div>

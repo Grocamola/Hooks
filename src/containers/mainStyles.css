@@ -1,6 +1,6 @@
 :root { 
     scroll-behavior: smooth;
-    background-color: #eee;
+    background-color: #EDF2F4;
 }
 
 
@@ -56,7 +56,7 @@
     min-height: 100vh;
     padding: 0;
     padding-top: 10rem;
-    padding-bottom: 5rem;
+    /* padding-bottom: 5rem; */
     margin: 0;
     text-align: center;
     box-sizing: border-box;
@@ -72,6 +72,7 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    color: #2B2D42;
 }
 
 hr { 
@@ -84,16 +85,16 @@ hr {
     height: 230px;
     margin: 10px;
     border-radius: 50px;
-    background: #eeeeee;
+    background: #EDF2F4;
     box-shadow:  7px 7px 14px #bababa,
-                 -7px -7px 14px #ffffff;
+                 -7px -7px 14px #EDF2F4;
 }
 .workshopBox h4 {
     line-height: 230px;
     padding: 0;
     margin: 0;
     font-family: 'RockSalt-Regular';
-    color: #555;
+    color: #2B2D42;
     font-size: 1.8rem;
     transform: rotate(-5deg);
     user-select: none;
@@ -101,13 +102,81 @@ hr {
 
 .workshopBox:active { 
     border-radius: 50px;
-    background: #eeeeee;
+    background: #EDF2F4;
     box-shadow: inset 7px 7px 14px #bababa,
-                inset -7px -7px 14px #ffffff;
+                inset -7px -7px 14px #EDF2F4;
 }
 .workshopBox:active h4 { 
     font-size: 1.7rem;
 }
 
 
+/* ---------- Devider ---------- */
 
+.deviderOne { 
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+    height: 300px;
+    margin-top: 80px;
+    background-size: cover;
+    background-image: URL('../assets/images/deviderOne.svg');
+    background-position: center;
+
+}
+
+/* ---------- Javascript ---------- */
+.javascriptFundamentals { 
+    height: 600px;
+    background-color: #2B2D42;
+}
+
+.javascriptFundamentals h1 { 
+    margin: 0 auto 20px;
+    padding: 0;
+    color: #EDF2F4;
+}
+
+.mainPage--Javascript { 
+    width: 770px;
+    max-width: min(1200px, 100vw);
+    height: fit-content;
+    min-height: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.jsBox { 
+    width: 230px;
+    min-width: 230px;
+    height: 230px;
+    margin: 10px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #27293b, #2e3047);
+    box-shadow:  7px 7px 16px #191a26,
+                 -7px -7px 16px #3d405e;
+}
+.jsBox h4 {
+    line-height: 230px;
+    padding: 0;
+    margin: 0;
+    font-family: 'RockSalt-Regular';
+    color: #EDF2F4;
+    font-size: 1.8rem;
+    transform: rotate(-5deg);
+    user-select: none;
+}
+
+.jsBox:active { 
+    border-radius: 50px;
+    background: #2B2D42;
+    box-shadow: inset 7px 7px 16px #191a26,
+                inset -7px -7px 16px #3d405e;
+}
+.jsBox:active h4 { 
+    font-size: 1.7rem;
+}

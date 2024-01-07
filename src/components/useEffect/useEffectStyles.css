@@ -1,9 +1,33 @@
+
+.useEffect--full { 
+    max-width: 1200px;
+    margin: 6rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.useEffect--final { 
+    width: 47%;
+    min-width: 400px;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+.useEffect--exercise { 
+    width: 47%;
+    max-width: 47%;
+    min-width: 400px;
+    height: 100%;
+    margin: 0 20px;
+    /* border: 1px solid blue; */
+}
+
+
 .useEffect--container { 
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
+    /* max-width: 600px; */
     height: min-content;
     /* border: 1px solid rgb(199, 199, 199); */
-    margin: 200px auto 0;
+    margin: 0px auto 0;
     border-radius: 20px;;
 }
 .colorBox { 
@@ -14,15 +38,22 @@
     border-radius: 15px;
 }
 .useEffect--container button { 
-    width: 8rem;
-    height: 3rem;
+    display: block;
+    width: 16rem;
+    height: 2.2rem;
     border: none;
     background-color: rgb(44, 44, 119);
     border-radius: 5px;
     color: white;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.1rem;
-    margin: 0 10px 15px;
+    margin: 0 auto 15px;
+}
+.useEffect--container button:hover { 
+    font-weight: 900;
+}
+.useEffect--container button:active { 
+    transform: scale(0.97)
 }
 .useEffect--items { 
     width: 90%;
