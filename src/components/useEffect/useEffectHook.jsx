@@ -52,6 +52,7 @@ const UseEffectHook = () => {
                         responseType === 'albums' && items.length > 0 ? items.splice(1,10).map((item, index) => <li key={index}>{item.title}</li>) : 
                         responseType === 'comments' && items.length > 0 ? items.splice(1,10).map((item, index) => <li key={index}>{item.body}</li>) : 
                         null}
+                        {/* {items.splice(1,10).map((item, index) => <li key={index}>{item.title}</li>)} */}
                     </ul>
                 </div>
             </div>
