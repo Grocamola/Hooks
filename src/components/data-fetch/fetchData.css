@@ -1,0 +1,21 @@
+
+
+.fetchData--container { 
+    max-width: 1200px;
+    margin: 6rem auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.fetchData--final { 
+    width: 47%;
+    min-width: 400px;
+    height: 100%;
+    border: 1px solid red;
+}
+.fetchData--exercise { 
+    width: 47%;
+    min-width: 400px;
+    height: 100%;
+    border: 1px solid blue;
+}

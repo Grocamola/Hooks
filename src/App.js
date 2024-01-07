@@ -7,6 +7,7 @@ import UseEffectHook from './components/useEffect/useEffectHook';
 import UseRef from './components/useRef/useRef';
 import UseReducer from './components/useReducer/useReducer';
 import UseContext from './components/useContext/useContext';
+import FetchData from './components/data-fetch/fetchData';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/hooks/useRef' element={<UseRef />} />
         <Route path='/hooks/useReducer' element={<UseReducer />} />
         <Route path='/hooks/useContext' element={<UseContext />} />
+        <Route path='/hooks/fetching-data' element={<FetchData />} />
         <Route path="/" element={<Navigate replace to='/Hellow!' />} />
       </Routes>
     </div>
