@@ -28,7 +28,7 @@ const FetchData = () => {
 ];
 
     useEffect(() => {
-        fetch(`//api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&key=${api_key}`)
+        fetch(`//api.openweathermap.org/data/2.5/weather?lat=43.6532&lon=-79.3832&key=${api_key}`)
         .then(response => response.json())
         .then(info => setWeatherInfo(info))
     },[])
@@ -43,6 +43,7 @@ const FetchData = () => {
             let city = weatherInfo.name;
 
             setWeatherDownloaded({temp: temp, icon: icon, city: city, desc: description})
+            console.log(weatherInfo)
         }
     },[weatherInfo])
 
