@@ -11,10 +11,17 @@ const MainPage = () => {
     const navigate = useNavigate();
 
     const hooksArray = ['useState','useEffect', 'useRef', 'useContext', 'useReducer']
-    const jsArray = ['reduce']
+    const jsArray = ['signin']
 
     const openHookPageHandler = (e) => { 
         navigate(`/hooks/${e}`, {replace: true});
+    }
+
+    const openProjectPageHandler = (e) => { 
+
+        const pagename = e === 'signin' && "signinForm";
+
+        navigate(`/projects/${pagename}`, {replace: true});
     }
 
     return ( 
@@ -31,12 +38,13 @@ const MainPage = () => {
                     </div>
                 </div>
                 <div className="deviderOne" style={{backgroundImage: deviderone}} />
-                <div className="javascriptFundamentals">
-                    <h1 style={{fontFamily: "RockSalt-Regular"}}>bit of JS to back you up ;)</h1>
+                <div className="projectsamples">
+                    <h1 style={{fontFamily: "RockSalt-Regular"}}>Projects :)</h1>
                     <div className="mainPage--Javascript">
-                        {jsArray.map((el, index) => <div key={index} className="jsBox" onClick={() => openHookPageHandler(el)}><h4>{el}</h4></div>)}
+                        {jsArray.map((el, index) => <div key={index} className="jsBox" onClick={() => openProjectPageHandler(el)}><h4>{el}</h4></div>)}
                     </div>
                 </div>
+                <div className="deviderOne" style={{backgroundImage: deviderone, rotate: "180deg"}} />
         </div>
      );
 }

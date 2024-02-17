@@ -119,7 +119,6 @@ hr {
     max-width: 100vw;
     box-sizing: border-box;
     height: 300px;
-    margin-top: 80px;
     background-size: cover;
     background-image: URL('../assets/images/deviderOne.svg');
     background-position: center;
@@ -127,12 +126,12 @@ hr {
 }
 
 /* ---------- Javascript ---------- */
-.javascriptFundamentals { 
-    height: 600px;
+.projectsamples { 
+    height: fit-content;
     background-color: #2B2D42;
 }
 
-.javascriptFundamentals h1 { 
+.projectsamples h1 { 
     margin: 0 auto 20px;
     padding: 0;
     color: #EDF2F4;
@@ -142,7 +141,6 @@ hr {
     width: 770px;
     max-width: min(1200px, 100vw);
     height: fit-content;
-    min-height: 500px;
     margin: auto;
     display: flex;
     flex-direction: row;

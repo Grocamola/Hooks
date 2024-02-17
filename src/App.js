@@ -8,6 +8,7 @@ import UseRef from './components/useRef/useRef';
 import UseReducer from './components/useReducer/useReducer';
 import UseContext from './components/useContext/useContext';
 import FetchData from './components/data-fetch/fetchData';
+import Signin from './components/_projects/signinForm/signin';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/hooks/useReducer' element={<UseReducer />} />
         <Route path='/hooks/useContext' element={<UseContext />} />
         <Route path='/hooks/fetching-data' element={<FetchData />} />
+        <Route path='/projects/signinForm' element={<Signin />} />
         <Route path="/" element={<Navigate replace to='/Hellow!' />} />
       </Routes>
     </div>
