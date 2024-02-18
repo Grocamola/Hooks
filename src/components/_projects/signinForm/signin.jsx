@@ -15,7 +15,7 @@ const Signin = () => {
 
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
-    const [age, setAge] = useState('')
+    const [age, setAge] = useState()
 
     const usernameRef = useRef()
     const passwordRef = useRef()
@@ -30,30 +30,53 @@ const Signin = () => {
         e.preventDefault()
         const usernameTemp = usernameRef.current.value
         const passwordTemp = passwordRef.current.value
-        setUsername(usernameTemp)
-        setPassword(passwordTemp)
 
-        usernameRef.current.value = null;
-        passwordRef.current.value = null;
+        const userCheck = DUMMY_USERS.filter(el => el.username === usernameTemp);
+        console.log(userCheck)
+        if(userCheck.length === 1 && userCheck[0].password === passwordTemp) {
+            setUsername(usernameTemp)
+            setPassword(passwordTemp)
+
+            usernameRef.current.value = null;
+            passwordRef.current.value = null;
+
+            console.log('User signed in: ',username, password)
+        } else if(userCheck.length === 1 && userCheck.password !== passwordTemp) { 
+            alert('Incorrect password. please try again.')
+        } else {
+            usernameRef.current.value = null;
+            passwordRef.current.value = null;
+        }
     }
 
     const signUpSubmitHandler = (e) => { 
         e.preventDefault()
+
         const usernameTempsignUp = usernameRefsignup.current.value
         const passwordTempsignup = passwordRefsignup.current.value
         const ageTempsignup = ageRefsignup.current.value
-        setUsername(usernameTempsignUp)
-        setPassword(passwordTempsignup)
-        setAge(ageTempsignup)
 
-        usernameRefsignup.current.value = null;
-        passwordRefsignup.current.value = null;
-        ageRefsignup.current.value = null;
+        const userCheckSignup = DUMMY_USERS.filter(el => el.username === usernameTempsignUp);
+
+        console.log('User info: ', username, password, age)
+
+        if(userCheckSignup.length < 1) { 
+            setUsername(usernameTempsignUp)
+            setPassword(passwordTempsignup)
+            setAge(ageTempsignup)
+    
+            usernameRefsignup.current.value = null;
+            passwordRefsignup.current.value = null;
+            ageRefsignup.current.value = null;
+
+            console.log('User added: ', username, password, age)
+        } else { 
+            alert('This user exists already. please try SIGN IN form instead.')
+        }
     }
 
-    useEffect(() => { 
-        console.log(username, password, age)
-    },[username, password, age])
+    useEffect(() => {},[username, password])
+
 
     return (
         <>
@@ -90,7 +113,8 @@ const Signin = () => {
                 
 
                 <div className="result">
-                    <p>Hi</p>
+                    {username && <p>Hello {username}</p>}
+                    {!username && <p>Hello, no one is here.</p>}
                 </div>
             </div>
         </>
