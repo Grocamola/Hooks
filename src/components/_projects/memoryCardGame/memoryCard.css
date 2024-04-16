@@ -1,0 +1,23 @@
+
+
+.board-container { 
+    width: 640px;
+    height: 480px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    border: 1px solid blue;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.box--box { 
+    width: 150px;
+    height: 150px;
+    border: 1px solid gray;
+    margin: 5px;
+    box-sizing: border-box;
+    /* padding-top: 60px; */
+}

@@ -9,6 +9,7 @@ import UseReducer from './components/useReducer/useReducer';
 import UseContext from './components/useContext/useContext';
 import FetchData from './components/data-fetch/fetchData';
 import Signin from './components/_projects/signinForm/signin';
+import MemoryCard from './components/_projects/memoryCardGame/memoryCards';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/hooks/useContext' element={<UseContext />} />
         <Route path='/hooks/fetching-data' element={<FetchData />} />
         <Route path='/projects/signinForm' element={<Signin />} />
+        <Route path='/projects/memory-cards' element={<MemoryCard />} />
         <Route path="/" element={<Navigate replace to='/Hellow!' />} />
       </Routes>
     </div>
