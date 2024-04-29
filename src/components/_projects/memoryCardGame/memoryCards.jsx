@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../../../containers/navbar';
 import './memoryCard.css';
 import Box from './box';
@@ -21,28 +21,55 @@ const MemoryCard = () => {
         {image: cat, checked: false, view: 'front'},
         {image: flower, checked: false, view: 'front'},
         {image: flower, checked: false, view: 'front'},
-        {image: leaf, checked: false, view: 'back'},
+        {image: leaf, checked: false, view: 'front'},
         {image: leaf, checked: false, view: 'front'},
         {image: monkey, checked: false, view: 'front'},
-        {image: monkey, checked: false, view: 'back'},
+        {image: monkey, checked: false, view: 'front'},
         {image: sit, checked: false, view: 'front'},
         {image: sit, checked: false, view: 'front'}
     ])
 
-    const boxClickHandler = (e) => { 
-        setBoard(prev => prev.map(el => ({ ...el, view: 'front' })));
-        setBoard(prevBoard => 
-            prevBoard.map((item, idx) => 
-                idx === e ? { ...item, view: 'back' } : item
-            )
-        );
+    const [play, setPlay] = useState([])
+
+    const shuffle = (array) => { 
+        return array.sort(() => Math.random() - 0.5); 
+    }; 
+
+
+    //Sophia ino avaz kardim, inja ro deghat kon:
+    const boxClickHandler = (e, img) => { 
+        if(play.length < 2) { 
+            setPlay(prev => [...prev, [e, img]])
+            setBoard(prevBoard => 
+                prevBoard.map((item, idx) => 
+                    idx === e ? { ...item, view: 'back' } : item
+                )
+            );
+        } else { 
+            setPlay([])
+            setBoard(prev => prev.map(el => ({ ...el, view: 'front' })));
+        } 
     }
+    useEffect(() => {
+        if(play.length === 2) { 
+            if(play[0][1] === play[1][1]) { 
+                console.log(play)
+                console.log('BINGO')
+            }
+        }
+    },[play])
+
+    const shuffleHandler = () => { 
+        setBoard(prev => shuffle(prev))
+    }
+
 
     return (
         <>
             <Navbar />
-
+            <button onClick={shuffleHandler} style={{marginTop: 200}}>START</button>
             <div className="board-container">
+                
                 {board.map((box, index) => <Box 
                     boxClick={boxClickHandler} 
                     image={box.image} 
