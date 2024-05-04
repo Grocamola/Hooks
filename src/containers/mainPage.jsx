@@ -11,7 +11,7 @@ const MainPage = () => {
     const navigate = useNavigate();
 
     const hooksArray = ['useState','useEffect', 'useRef', 'useContext', 'useReducer']
-    const jsArray = ['signin', 'memoryCard']
+    const jsArray = ['signin', 'memoryCard', 'imageCarousel']
 
     const openHookPageHandler = (e) => { 
         navigate(`/hooks/${e}`, {replace: true});
@@ -19,7 +19,9 @@ const MainPage = () => {
 
     const openProjectPageHandler = (e) => { 
 
-        const pagename = e === 'signin' ? "signinForm" : e === 'memoryCard' ? 'memory-cards' : null;
+        const pagename = e === 'signin' ? "signinForm" : 
+            e === 'memoryCard' ? 'memory-cards' :
+            e === 'imageCarousel' ? 'image-carousel' : null;
 
         navigate(`/projects/${pagename}`, {replace: true});
     }

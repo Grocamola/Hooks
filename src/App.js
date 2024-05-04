@@ -10,6 +10,7 @@ import UseContext from './components/useContext/useContext';
 import FetchData from './components/data-fetch/fetchData';
 import Signin from './components/_projects/signinForm/signin';
 import MemoryCard from './components/_projects/memoryCardGame/memoryCards';
+import ImageCarousel from './components/_projects/imageCarousel/imageCarousel';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path='/hooks/fetching-data' element={<FetchData />} />
         <Route path='/projects/signinForm' element={<Signin />} />
         <Route path='/projects/memory-cards' element={<MemoryCard />} />
+        <Route path='/projects/image-carousel' element={<ImageCarousel />} />
         <Route path="/" element={<Navigate replace to='/Hellow!' />} />
       </Routes>
     </div>
