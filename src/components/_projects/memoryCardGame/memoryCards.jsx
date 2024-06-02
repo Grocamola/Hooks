@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import Navbar from '../../../containers/navbar';
 import './memoryCard.css';
 import Box from './box';
@@ -51,16 +51,32 @@ const MemoryCard = () => {
         } 
     }
     useEffect(() => {
-        if(play.length === 2) { 
-            if(play[0][1] === play[1][1]) { 
-                console.log(play)
-                console.log('BINGO')
-            }
+        // if(play.length === 2) { 
+        //     if(play[0][1] === play[1][1]) { 
+        //         console.log(play)
+        //         console.log('BINGO')
+        //     }
+        // }
+
+        const activeCards = board.filter(card => card.view === 'back');
+        if (activeCards.length === 2 && activeCards[0].image === activeCards[1].image) {
+            setBoard(prevBoard =>
+                prevBoard.map(item =>
+                    item.image === activeCards[0].image ? { ...item, checked: true } : item
+                )
+            );
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[play])
+
+    useEffect(() => {
+        board.filter(item => item.checked === true).length === 12 && console.log('Game Completed!')
+    },[board])
+
 
     const shuffleHandler = () => { 
         setBoard(prev => shuffle(prev))
+        setBoard(prevBoard => prevBoard.map(item => ({...item, checked: false })));
     }
 
 
@@ -68,16 +84,17 @@ const MemoryCard = () => {
         <>
             <Navbar />
             <button onClick={shuffleHandler} style={{marginTop: 200}}>START</button>
-            <div className="board-container">
-                
-                {board.map((box, index) => <Box 
-                    boxClick={boxClickHandler} 
-                    image={box.image} 
-                    view={box.view} 
-                    id={index}
-                    key={index}
-                >Click me!</Box> )}
-            </div>
+            {board.filter(item => item.checked === false) !== 0 && <div className="board-container">
+                    {board.map((box, index) => <Box 
+                        boxClick={boxClickHandler} 
+                        image={box.image} 
+                        view={box.view} 
+                        checked={box.checked}
+                        id={index}
+                        key={index}
+                    >Click me!</Box> )}
+                </div>}
+            {board.filter(item => item.checked === true).length === 12 && <h1 style={{marginTop: 100}}>You Won!</h1>}
         </>
     );
 }
